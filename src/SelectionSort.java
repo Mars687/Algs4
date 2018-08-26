@@ -8,6 +8,7 @@ public class SelectionSort {
         }
         System.out.println();
         
+        long startTime = System.nanoTime();
         for(int i = 0; i < arr.length-1; i++){
             int key = i;
             for(int j = i+1; j < arr.length; j++){
@@ -19,11 +20,13 @@ public class SelectionSort {
             arr[i] = arr[key];
             arr[key] = temp;
         }
+        long endTime = System.nanoTime();
         
         System.out.print("Sorted array is:");
         for(int i = 0; i < arr.length; i++){
             System.out.print(" " + arr[i]);
         }
         System.out.println();
+        System.out.println("Program running time: " + (endTime-startTime) + "ns");
     }
 }
